@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+        }
+        iframe {
+            width: 100%; /* Make it responsive */
+            height: 600px; /* Set your desired height */
+            border: 16px solid #444444; /* Optional border */
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+  <h1 style="color: #FAFAFA;">Manufacturer - Web design</h1>
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/on4rZefDwhroBx83TOIru5/Jaakhydro-Website?page-id=631358%3A309&node-id=631398-892&node-type=frame&viewport=-141%2C896%2C0.19&scaling=min-zoom&content-scaling=fixed&embed-host=share" allowfullscreen></iframe>
+ 
+  <!--
+  -disable the right-click context menu
+ -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>  
+
+<!--
+  -disable the Ctrl+U (or Cmd on Mac)
+    -->
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      // Check if Ctrl (or Cmd on Mac) is pressed and the key 'U' is pressed
+      if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
+        e.preventDefault(); // Prevent the default action
+      }
+    });
+  </script>
+
+<!-- 
+  -disable the Ctrl+S (or Cmd on Mac)
+   -->
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed and the key 'S' is pressed
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault(); // Prevent the default "Save" action
+      alert("Saving this page is disabled.");
+    }
+  });
+</script> 
+
+<script>
+    document.addEventListener('keydown', function(e) {
+      // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+      if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+        e.preventDefault(); // Prevent the default action
+      }
+    });
+  </script>
+  
+</body>
+</html>

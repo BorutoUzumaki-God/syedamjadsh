@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+        }
+        iframe {
+            width: 100%; /* Make it responsive */
+            height: 600px; /* Set your desired height */
+            border: 16px solid #444444; /* Optional border */
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+  <h1 style="color: #FAFAFA;">Bus Ticket Booking - Applications</h1>
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/4h87WgH2X6zFcRDQpUClnI/Bus-Transport-Design?page-id=0%3A1&type=design&node-id=301-334&viewport=63%2C-319%2C0.1&scaling=scale-down-width&embed-host=share" allowfullscreen></iframe>
+ 
+  <!--
+  -disable the right-click context menu
+ -->
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>  
+
+<!--
+  -disable the Ctrl+U (or Cmd on Mac)
+    -->
+
+  <script>
+    document.addEventListener('keydown', function(e) {
+      // Check if Ctrl (or Cmd on Mac) is pressed and the key 'U' is pressed
+      if ((e.ctrlKey || e.metaKey) && e.key === 'u') {
+        e.preventDefault(); // Prevent the default action
+      }
+    });
+  </script>
+
+<!-- 
+  -disable the Ctrl+S (or Cmd on Mac)
+   -->
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed and the key 'S' is pressed
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault(); // Prevent the default "Save" action
+      alert("Saving this page is disabled.");
+    }
+  });
+</script> 
+
+<script>
+    document.addEventListener('keydown', function(e) {
+      // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+      if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+        e.preventDefault(); // Prevent the default action
+      }
+    });
+  </script>
+  
+</body>
+</html>
