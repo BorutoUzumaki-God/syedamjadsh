@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow AI Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+        }
+        iframe {
+            width: 100%; /* Make it responsive */
+            height: 600px; /* Set your desired height */
+            border: 16px solid #444444; /* Optional border */
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+  <h1 style="color: #FAFAFA;">Workflow AI Assistant - Dashboard</h1>
+  <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/uVNdX2hoYeOs7xP9agX0c9/Workflow-AI-Assistant?page-id=22%3A25&node-id=299-4962&viewport=96%2C627%2C0.3&scaling=scale-down-width&content-scaling=fixed&embed-host=share" allowfullscreen></iframe>
+  
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  
+    // Disable specific keyboard shortcuts
+    document.addEventListener('keydown', function (e) {
+      const forbiddenKeys = [
+        { key: 'u', ctrlOrMeta: true }, // Ctrl+U or Cmd+U
+        { key: 's', ctrlOrMeta: true }, // Ctrl+S or Cmd+S
+        { key: 'i', ctrlOrMeta: true }, // Ctrl+I or Cmd+I
+      ];
+  
+      forbiddenKeys.forEach(combo => {
+        if (
+          (combo.ctrlOrMeta && (e.ctrlKey || e.metaKey)) &&
+          e.key.toLowerCase() === combo.key
+        ) {
+          e.preventDefault();
+          alert('This action is disabled!');
+        }
+      });
+    });
+  </script>  
+  
+</body>
+</html>
