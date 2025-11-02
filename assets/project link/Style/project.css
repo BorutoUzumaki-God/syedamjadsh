@@ -1,0 +1,412 @@
+/* =========================================================
+   0) Reset & Variables
+   ========================================================= */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+:root{
+  /* Colors */
+  --bg-dark: #121212;
+  --card: #1e1e1f;
+  --card-accent: #fff3d0;
+  --text: #d6d6d6;
+  --text-strong: #ffffff;
+  --text-dark: #1e1e1f;
+  --border: #383838;
+  --accent: #4a90e2;
+
+  /* Radii */
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  /* Shadows */
+  --shadow-lg: 0 24px 80px rgba(0,0,0,.25);
+  --shadow-md: 0 6px 39px rgba(85,85,85,.14);
+
+  /* Sizing */
+  --container-pad: clamp(16px, 4vw, 120px);
+  --content-gap: 24px;
+
+  /* Typography scale (clamp for responsiveness) */
+  --fs-hero: clamp(28px, 4.2vw, 36px);
+  --fs-h2: clamp(20px, 2.2vw, 24px);
+  --fs-h3: clamp(18px, 1.8vw, 20px);
+  --fs-body: clamp(14px, 1.3vw, 16px);
+  --fs-badge: 14px;
+  --fs-button: 18px;
+
+    /* Vertical spacing scale */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 28px;
+  --space-xl: 40px;
+  --space-xxl: 56px;
+
+  p, ul, ol, h1, h2, h3, h4 {
+  margin: 0;
+}
+
+p + ul, p + ol {
+  margin-top: var(--space-xs);
+}
+
+ul, ol {
+  padding-left: 1.35rem;
+  margin-top: var(--space-xxs);
+  margin-bottom: var(--space-xxs);
+  list-style-type: circle;
+}
+
+li {
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+}
+
+* { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+html, body { height: 100%; }
+body { background: var(--bg-dark); color: var(--text); font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+
+/* =========================================================
+   1) Layout: Project wrapper & cards
+   ========================================================= */
+
+.project{
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+  padding: 60px var(--container-pad);
+}
+
+.project__card{
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(20px, 3.2vw, 45px) clamp(16px, 2.4vw, 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project__card--hero{
+  align-items: stretch;
+}
+
+.project__card--highlight{
+  background: var(--card-accent);
+  color: var(--text-dark);
+  border: none;
+  position: relative;
+}
+
+/* Optional decorative border for highlight card */
+.project__card--highlight::before{
+  content:"";
+  position:absolute; inset:0; padding:3px; border-radius:var(--r-lg);
+  background: linear-gradient(90deg, rgba(255,219,112,1) 0%, rgba(255,187,92,1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events:none;
+}
+
+/* Light highlight cards should use dark headings */
+.project__card--highlight .project__section-title,
+.project__card--highlight .project__subtitle {
+  color: var(--text-dark);
+}
+
+/* Fix spacing for paragraphs and bullet lists inside highlight cards */
+.project__card--highlight p + ul {
+  margin-top: var(--space-xs); /* Reduce the gap above the bullet list */
+}
+
+.project__card--highlight ul {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xxs);
+  padding-left: 1.25rem; /* clean bullet indent */
+}
+
+.project__card--highlight li {
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+
+/* alternative: inherit color from the card */
+.project__section-title {
+  color: inherit;
+  font-weight: 600;
+  font-size: var(--fs-h2);
+}
+
+/* =========================================================
+   2) Header / Meta / Hero
+   ========================================================= */
+.project__header{ display:flex; flex-direction:column; gap:8px; align-items:center; text-align:center; }
+.project__title{ color:var(--text-strong); font-weight:700; font-size:var(--fs-hero); letter-spacing:.5px; }
+.project__subtitle{ color:var(--text); font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6; }
+
+.project__meta{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+.project__badge{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding: 10px 16px; border-radius: var(--r-pill);
+  background:#1f2124; border:2px solid #2a2c30; font-size:var(--fs-badge); color:#fff;
+}
+
+.project__hero{ margin-top: 8px; }
+.project__hero img{
+  width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-md);
+  display:block;
+}
+
+/* =========================================================
+   3) Two-column intro (info + summary)
+   ========================================================= */
+.project__intro{
+  display:grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: clamp(16px, 3vw, 44px);
+  align-items:start;
+}
+
+.project__info{ display:flex; flex-direction:column; gap:14px; }
+.project__info-block{ display:flex; flex-direction:column; gap:4px; }
+.project__info-label{ color:var(--text-strong); font-weight:600; font-size: var(--fs-body); }
+.project__info-text{ color:var(--text); font-size: var(--fs-body); }
+
+.project__summary{ display:flex; flex-direction:column; gap:20px; }
+.project__body{ font-size: var(--fs-body); line-height: 1.5; }
+.project__subtitle{ font-size: var(--fs-h3); color: var(--text-strong); font-weight: 600; }
+.project__muted{ opacity:.9; }
+.project__subtle{ opacity:.8; }
+.project__body--on-light{ color: var(--text-dark); }
+
+/* =========================================================
+   4) Lists, gallery, quote, pairs
+   ========================================================= */
+.project__section{ display:flex; flex-direction:column; gap: 12px; }
+.project__section-title{ color:var(--text-strong); font-weight:600; font-size: var(--fs-h2); }
+
+.project__gallery {
+  display:flex;
+  flex-wrap:wrap;
+  gap: 15px;
+}
+
+.project__gallery--wide {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.project__gallery--wide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: none; /* <- VERY IMPORTANT */
+  transition: transform .35s ease;
+}
+
+.project__gallery--wide img:hover {
+  transform: translateY(-4px);
+  /* no box-shadow here */
+}
+
+/* Remove the card look for this specific gallery section (works in all browsers) */
+.project__card--nochrome {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Keep the text block spacing above the gallery tidy */
+.project__card--nochrome .project__section {
+  margin-bottom: 12px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Bullet point gaps project*/
+.project__sectiobullet { display:flex; flex-direction:column; gap: 24px; }
+
+/* Make sure gallery images are clean and full-bleed inside the grid */
+.project__gallery--wide img {
+  width: 250px;
+  height: 230px;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: none;            /* no shadow by default */
+  transition: transform .35s ease;
+}
+
+/* Optional: if you DON'T want any hover effect, remove this block entirely. 
+   If you want only a subtle lift without shadow, keep it as-is. */
+.project__gallery--wide img:hover {
+  transform: translateY(-4px);
+  /* no box-shadow */
+}
+
+.project__pair{
+  display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:15px;
+}
+.project__pair img{ width:100%; height:auto; border-radius:16px; box-shadow: var(--shadow-md); }
+
+.project__quote{
+  align-items:center; text-align:center; gap:12px;
+}
+.project__quote-icon{ width: 28px; height: 28px; }
+.project__blockquote{
+  font-weight:600; font-size: var(--fs-h2); color: var(--text-dark);
+}
+
+/* =========================================================
+   5) Buttons & footer
+   ========================================================= */
+/*.button{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding: 12px 24px; border-radius: var(--r-pill); font-size: var(--fs-button);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.button--primary{
+  color:#d6d6d6;
+  background: linear-gradient(145deg, #3f3f40 3%, #303030 97%);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+.button--primary:hover{ transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.3); }
+
+/* Set fixed width for this specific button */
+/*.button--primary {
+  width: 254px;
+  justify-content: center; /* keep text centered */
+  /*padding-left: 32;/
+  padding-right: 32;
+}*/
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-button);
+  transition: background .12s ease, color .20s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.button--primary {
+  color: #d6d6d6;
+  background: linear-gradient(145deg, #3f3f40 3%, #303030 97%);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  width: 230px;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.button--primary:hover {
+  background: hsl(45, 100%, 71%) 0%;
+  color: #1a1a1a;
+
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.28),
+    0 0 12px hsla(0, 0%, 0%, 0.25),
+}
+
+
+.project__footer{
+  width:100%; display:flex; justify-content:center; align-items:center; padding: 8px 0;
+}
+.project__footnote{ color:#fff; font-size: 12px; text-align:center; }
+
+/* =========================================================
+   6) Responsive
+   ========================================================= */
+/* Tablet */
+@media (max-width: 1024px){
+  .project{ padding: 48px var(--container-pad); }
+  .project__gallery--wide{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .project{ padding: 40px var(--container-pad); }
+  .project__header{ align-items:flex-start; text-align:left; }
+  .project__intro{ grid-template-columns: 1fr; }
+  .project__gallery--wide{ grid-template-columns: 1fr; }
+  .project__pair{ grid-template-columns: 1fr; }
+  .project__title{ letter-spacing: 0; }
+}
+
+/* Prototype Modal */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(204, 204, 204, 0.35);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 90vw;
+  max-width: 1200px;
+  height: 85vh;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(131, 131, 131, 0.3);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  background: #f2f2f2;
+  transform: scale(1.05);
+}
+
+.modal-close {
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+

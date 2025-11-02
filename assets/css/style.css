@@ -112,6 +112,25 @@ a { text-decoration: none; }
 
 li { list-style: none; }
 
+/* Resume bullets — Dashes */
+.timeline-text { margin-left: 0; line-height: 1.55; }
+.timeline-text li{
+  list-style: none;
+  margin: 4px 0;
+}
+.timeline-text li::before{
+  content: "–";                 /* en dash */
+  margin-right: 8px;
+  color: #9ca3af;
+}
+
+.timeline-company-intro {
+  margin: 6px 0 8px;
+  font-size: .95rem;
+  color: #bdbdbd;
+  line-height: 1.5;
+}
+
 img, ion-icon, a, button, time, span { display: block; }
 
 button {
@@ -503,6 +522,20 @@ main {
 .about-text p { margin-bottom: 15px; }
 
 
+/*-----------------------------------*\
+  #Resume
+\*-----------------------------------*/
+
+.resume .article-title { margin-bottom: 15px; }
+
+.resume-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.resume-text p { margin-bottom: 15px; }
 
 /**
  * #service 
@@ -907,7 +940,7 @@ gap: 0;
 
 
 /*-----------------------------------*\
-  #PORTFOLIO
+  #Work
 \*-----------------------------------*/
 
 .filter-list { display: none; }
@@ -1296,7 +1329,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG 
+   * #Work, BLOG 
    */
 
   .project-img,
@@ -1425,7 +1458,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
 
-
   /**
    * #NAVBAR
    */
@@ -1445,6 +1477,14 @@ textarea.form-input::-webkit-resizer { display: none; }
   .about .article-title { margin-bottom: 20px; }
 
   .about-text { margin-bottom: 40px; }
+
+    /**
+   * #Resume
+   */
+
+  .resume .article-title { margin-bottom: 20px; }
+
+  .resume-text { margin-bottom: 40px; }
 
   /* service */
 
@@ -1560,7 +1600,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * #PORTFOLIO, BLOG
+   * #Work, BLOG
    */
 
   .project-img, .blog-banner-box { border-radius: 16px; }
@@ -1653,7 +1693,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * PORTFOLIO
+   * Work
    */
 
   .article-title { padding-bottom: 20px; }
@@ -1679,7 +1719,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-item button.active { color: var(--orange-yellow-crayola); }
 
-  /* portfolio and blog grid */
+  /* Work and blog grid */
 
   .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
@@ -1798,7 +1838,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * PORTFOLIO
+   * Work
    */
 
   .project-list { grid-template-columns: repeat(3, 1fr); }
@@ -1946,4 +1986,27 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+/* Mobile: avatar top + text aligned cleanly */
+@media (max-width: 600px) {
+  .sidebar-info {
+    align-items: flex-start !important; /* avatar goes to the top */
+  }
+
+  /* Keep avatar + text aligned in a row */
+  .sidebar-info {
+    flex-direction: row !important;
+    gap: 24px !important;
+  }
+
+  .avatar-box img {
+    width: 90px; /* adjust size as needed */
+  }
+
+  .info-content {
+    text-align: left-center;
+    margin-top: 0px; /* slight vertical balance */
+  }
 }
