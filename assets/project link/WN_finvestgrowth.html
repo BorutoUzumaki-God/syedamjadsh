@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Finvest Growth — case study: role, problem, research, design process, and impact." />
+  <title>Finvest Growth — Case Study</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./Style/project.css" />
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+
+<body>
+  <main class="project">
+
+    <!-- Header / Hero -->
+    <article class="project__card project__card--hero">
+      <header class="project__header">
+        <h1 class="project__title">Finvest Growth Landing Page</h1>
+        <p class="project__subtitle">
+          A high-conversion landing page designed to build trust and drive wealth consultation sign-ups.
+        </p>
+      </header>
+
+      <nav class="project__meta" aria-label="Project metadata">
+        <span class="project__badge">Visual Design</span>
+        <span class="project__badge">Web Layout</span>
+        <span class="project__badge">2025</span>
+      </nav>
+
+      <figure class="project__hero">
+        <img src="./Casestudy Images/WN/Header Image.png" alt="Dashboard preview hero image">
+      </figure>
+    </article>
+
+    <!-- Role / Platform / Tools + summary -->
+    <article class="project__card">
+      <section class="project__intro">
+        <aside class="project__info">
+          <div class="project__info-block">
+            <h2 class="project__info-label">Role</h2>
+            <p class="project__info-text">UX + UI Design, Prototyping</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Platform</h2>
+            <p class="project__info-text">Web</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Tools</h2>
+            <p class="project__info-text">Figma, AI, Paper & canva</p>
+          </div>
+        </aside>
+
+        <div class="project__summary">
+          <p class="project__body">
+            Finvest Growth is a wealth advisory service targeting HNIs and new investors. I designed a conversion-focused landing page that clarifies their value proposition, builds trust through advisor credibility, and simplifies lead capture. The layout reduces cognitive load, highlights key offerings, and improves sign-up flow for marketing campaigns.
+          </p>
+
+          <a class="button button--primary" href="#prototype">View Prototype</a>
+        </div>
+      </section>
+    </article> 
+
+    <!-- Overview -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Overview</h2>
+        <p class="project__body">
+         The client needed a landing page specifically for performance marketing. Their previous communication was text-heavy and lacked a clear narrative for convincing new users. I developed a clean visual hierarchy, trust-reinforcing elements (credentials, testimonials, team), and a simplified inquiry form. 
+        </p>
+        <p class="project__body">
+          The result is a persuasive, modern design optimized for engagement and lead conversions.
+        </p>
+      </section>
+    </article>
+
+    <!-- Process -->
+    <article class="project__card project__card--highlight">
+      <section class="project__section">
+        <h2 class="project__section-title">Process</h2>
+        <ol class="project-list">
+  <li class="project-item">
+    <strong>1. Research &amp; Insight Gathering</strong>
+    <ul class="project-list">
+      <li class="project-item">Reviewed brand messaging and existing website flow</li>
+      <li class="project-item">Analyzed common financial landing page patterns</li>
+      <li class="project-item">Identified trust factors essential for HNI audiences</li>
+      <li class="project-item">Defined sections using Awareness → Trust → Action</li>
+    </ul>
+  </li>
+
+  <li class="project-item">
+    <strong>2. UX Structure &amp; Content Strategy</strong>
+    <ul class="project-list">
+      <li class="project-item">Top-to-bottom persuasion flow</li>
+      <li class="project-item"><em>Value → Trust → Advisors → Offer → CTA</em></li>
+      <li class="project-item">Lean form fields to reduce drop-off</li>
+    </ul>
+  </li>
+
+  <li class="project-item">
+    <strong>3. Wireframes</strong>
+    <ul class="project-list">
+      <li class="project-item">Low-fi layout to validate information order</li>
+      <li class="project-item">Scannable sections across breakpoints</li>
+      <li class="project-item">Space for testimonials, advisors, philosophy</li>
+    </ul>
+  </li>
+
+  <li class="project-item">
+    <strong>4. Visual Design</strong>
+    <ul class="project-list">
+      <li class="project-item">Clean white + lavender theme for clarity</li>
+      <li class="project-item">Graphic modules for investment approach</li>
+      <li class="project-item">Friendly imagery to reduce decision anxiety</li>
+    </ul>
+  </li>
+
+  <li class="project-item">
+    <strong>5. Final Prototype &amp; Handoff</strong>
+    <ul class="project-list">
+      <li class="project-item">Responsive screens delivered in Figma</li>
+      <li class="project-item">Component styles &amp; spacing documented</li>
+    </ul>
+  </li>
+</ol>
+      </section>
+    </article>
+
+    <!-- Outcome -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Outcome</h2>
+
+        <div class="project__stack">
+          <ul class="project__list">
+            <li>Clearer communication around company credibility and investment benefits</li>
+            <li>Stronger user trust with advisor profiles and testimonials</li>
+            <li>Reduced form complexity to improve conversion likelihood</li>
+            <li>Ready-to-launch marketing funnel asset supporting paid ad campaigns</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="project__footer">
+      <p class="project__footnote">Copyright © 2025 Syed Amjad, All Rights Reserved</p>
+    </footer>
+
+  </main>
+
+<!-- Modal -->
+<div id="prototype-modal" class="modal">
+  <div class="modal-content">
+<iframe src="https://embed.figma.com/proto/MB9uqS7yIXd1dLwuys4MPh/Wealth-Nivesh-Landing-Page?page-id=0%3A1&node-id=2047-320&scaling=scale-down-width&content-scaling=fixed&embed-host=share" 
+allowfullscreen></iframe>
+  </div>
+
+  <!-- Floating Close Button (keep only this one) -->
+  <button class="modal-close" id="closeModal">&times;</button>
+</div>
+
+<!-- JavaScript for Prototype modal-->
+
+<script>
+  const openBtn = document.querySelector('.button.button--primary[href="#prototype"]');
+  const modal = document.getElementById('prototype-modal');
+  const closeBtn = document.getElementById('closeModal');
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+</script>
+
+<!-- disable the right-click context menu  -->
+  
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script> 
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Disable Ctrl+U (or Cmd+U on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+      e.preventDefault();
+      alert("Viewing page source is disabled.");
+    }
+    
+    // Disable Ctrl+S (or Cmd+S on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      alert("Saving this page is disabled.");
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+      e.preventDefault(); // Prevent the default action
+    }
+  });
+</script>
+
+</body>
+</html>

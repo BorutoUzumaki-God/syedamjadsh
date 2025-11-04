@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="MediAssist AI Health Companion — Mobile App: role, problem, research, design process, and impact." />
+  <title>MediAssist AI Health Companion — Mobile App</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./Style/project.css" />
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+
+<body>
+  <main class="project">
+
+    <!-- Header / Hero -->
+    <article class="project__card project__card--hero">
+      <header class="project__header">
+        <h1 class="project__title">MEDIASSIST AI HEALTH COMPANION — MOBILE APP</h1>
+        <p class="project__subtitle">
+          A conversational AI app that provides clear, trustworthy wellness guidance for everyday health concerns.
+        </p>
+      </header>
+
+      <nav class="project__meta" aria-label="Project metadata">
+        <span class="project__badge">Product Design</span>
+        <span class="project__badge">Conversation UX</span>
+        <span class="project__badge">Android App</span>
+        <span class="project__badge">2025</span>
+      </nav>
+
+      <figure class="project__hero">
+        <img src="./Casestudy Images/Healthcare/Header Image.png" alt="Dashboard preview hero image">
+      </figure>
+    </article>
+
+    <!-- Role / Platform / Tools + summary -->
+    <article class="project__card">
+      <section class="project__intro">
+        <aside class="project__info">
+          <div class="project__info-block">
+            <h2 class="project__info-label">Role</h2>
+            <p class="project__info-text">UX + UI, Research, Prototype</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Platform</h2>
+            <p class="project__info-text">Web · Desktop</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Tools</h2>
+            <p class="project__info-text">Figma, AI, Paper</p>
+          </div>
+        </aside>
+
+        <div class="project__summary">
+          <p class="project__body">
+            MediAssist is an AI-driven health chat companion designed to help users understand symptoms, receive supportive guidance, and make informed wellness decisions. The focus was to create a warm, human, and reassuring chat experience that provides clarity without overwhelming medical jargon.
+          </p>
+
+          <a class="button button--primary" href="#prototype">View Prototype</a>
+        </div>
+      </section>
+    </article> 
+
+    <!-- Overview -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Overview</h2>
+        <p class="project__body">
+         Users often struggle with online medical information — it’s confusing, contradictory, and sometimes frightening. MediAssist helps users handle everyday health situations (like fever, fatigue, minor injuries) at home with safe, conversational, and evidence-based guidance.
+        </p>
+        <p class="project__body">
+          The goal was to make the experience empathic, calming, and easy to follow for users aged 18–60+.
+        </p>
+      </section>
+    </article>
+
+    <!-- Problem Summary -->
+    <article class="project__card project__card--highlight">
+      <section class="project__section">
+        <h2 class="project__section-title">Problem Summary</h2>
+
+        <div class="project__stack">
+          <p class="project__subtle">Users found existing AI health chats:</p>
+          <ul class="project__list project__body--on-light">
+            <li>Too robotic and emotionally cold</li>
+            <li>Overloaded with dense text</li>
+            <li>Lacking clear next steps or support</li>
+            <li>Hard to use for older adults or users with lower digital familiarity</li>
+          </ul>
+        </div>
+
+                <div class="project__stack">
+          <p class="project__subtle">We needed to redesign the chat so it felt:</p>
+          <ul class="project__list project__body--on-light">
+            <li>Human, friendly, and supportive</li>
+            <li>Guided, not overwhelming</li>
+            <li>Lacking clear next steps or support</li>
+            <li>Visually light and easy to read</li>
+          </ul>
+        </div>
+
+      </section>
+    </article>
+
+    <!-- Research & Insights -->
+    <article class="project__card">
+      <section class="project__section">
+     <h2 class="project__section-title">Research &amp; Insights</h2> <br>
+         <strong>1. Methods used</strong>
+      <p class="project__body">
+        8 user interviews (18–60 yrs), 3 remote task tests, chat-log review (200+ turns), quick competitor scan (Ada, K Health, WebMD).
+      </p>
+
+       <strong>2. Entry anxiety</strong>
+      <p class="project__body">
+        Users feared “misdiagnosis” from AI; they wanted to know who made the advice and when to see a doctor.
+      </p>
+
+      <strong>3. Trust cues matter</strong>
+      <p class="project__body">
+        Clear credentials, sources, and last-updated dates increased confidence and completion.
+      </p>
+
+      <strong>4. Language & tone</strong>
+      <p class="project__body">
+        Medical phrasing felt cold; plain, reassuring language reduced drop-offs in the first 3 messages.
+      </p>
+
+      <strong>5. Accessibility</strong>
+      <p class="project__body">
+        Larger tap targets and 16–18px base type helped older users; high-contrast success/error states aided clarity.
+      </p>
+
+      <strong>6. Safety boundaries</strong>
+      <p class="project__body">
+        Users sometimes asked about serious symptoms; automatic handoff to human/doctor with disclaimers was expected.
+      </p>
+
+      <strong>7. History & recall</strong>
+      <p class="project__body">
+        Gentle reminders (e.g., “re-check fever after 6 hrs”) were preferred over generic push spam.
+      </p>
+
+
+  </section>
+  </article>
+
+    <!-- Design Approach -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Design Approach</h2>
+
+     <strong>1. Paper Sketch → Low Fidelity Wireframe → High Fidelity UI → Final Design</strong>
+      <p class="project__body project__body--on-light">
+        You followed a progressive shaping process to validate clarity and emotional tone early.
+      </p>
+
+     <strong>2. Conversational UX Writing</strong>
+      <div class="project__stack">
+       <ul class="project__list">
+            <li>Shifted from instructional tone → compassionate guidance</li>
+            <li>Introduced phrases like “You’re in a judgment-free space. I’m here to help.”</li>
+          </ul>
+      </div>
+
+           <strong>3. UI Enhancements</strong>
+      <div class="project__stack">
+       <ul class="project__list">
+            <li>Larger chat bubbles</li>
+            <li>Clear visual separation of tips, analysis, suggestions</li>
+            <li>Soft, calming color palette</li>
+          </ul>
+      </div>
+
+      </section>
+    </article>
+
+    <!-- The Solution -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">The Solution</h2>
+        <p class="project__body">
+          The final design feels empathetic, human-centered, and approachable, guiding users step-by-step through 
+          their health queries with confidence and reassurance.
+        </p>
+      </section>
+    </article>
+
+    <!-- Result -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Result</h2>
+        <ul class="project__list">
+          <li>Reduced cognitive overload</li>
+          <li>Increased user trust in the AI responses</li>
+          <li>Improved task completion (users no longer get “stuck” in conversation flows)</li>
+          <li>More emotionally supportive wellness experience</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="project__footer">
+      <p class="project__footnote">Copyright © 2025 Syed Amjad, All Rights Reserved</p>
+    </footer>
+
+  </main>
+
+<!-- Modal -->
+<div id="prototype-modal" class="modal">
+  <div class="modal-content">
+<iframe 
+  src="https://embed.figma.com/proto/tVipjqmtec4bPLd2yK59Ol/IOT-Security?page-id=835%3A39881&node-id=887-53938&viewport=1593%2C296%2C0.13&scaling=scale-down-width&content-scaling=fixed&embed-host=share" 
+  allowfullscreen>
+</iframe>
+  </div>
+
+  <!-- Floating Close Button (keep only this one) -->
+  <button class="modal-close" id="closeModal">&times;</button>
+</div>
+
+<!-- JavaScript for Prototype modal-->
+
+<script>
+  const openBtn = document.querySelector('.button.button--primary[href="#prototype"]');
+  const modal = document.getElementById('prototype-modal');
+  const closeBtn = document.getElementById('closeModal');
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+</script>
+
+<!-- disable the right-click context menu  -->
+  
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script> 
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Disable Ctrl+U (or Cmd+U on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+      e.preventDefault();
+      alert("Viewing page source is disabled.");
+    }
+    
+    // Disable Ctrl+S (or Cmd+S on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      alert("Saving this page is disabled.");
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+      e.preventDefault(); // Prevent the default action
+    }
+  });
+</script>
+
+</body>
+</html>

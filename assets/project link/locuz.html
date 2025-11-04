@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Locuz Enterprise Website Revamp — case study: role, problem, research, design process, and impact." />
+  <title>LOCUZ ENTERPRISE WEBSITE REVAMP — Case Study</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./Style/project.css" />
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+
+<body>
+  <main class="project">
+
+    <!-- Header / Hero -->
+    <article class="project__card project__card--hero">
+      <header class="project__header">
+        <h1 class="project__title">LOCUZ ENTERPRISE WEBSITE REVAMP</h1>
+        <p class="project__subtitle">
+          A comprehensive redesign of multi-solution enterprise service pages to improve clarity, navigation, and lead engagement.
+        </p>
+      </header>
+
+      <nav class="project__meta" aria-label="Project metadata">
+        <span class="project__badge">UX Design</span>
+        <span class="project__badge">Visual Design</span>
+        <span class="project__badge">2024</span>
+      </nav>
+
+      <figure class="project__hero">
+        <img src="./Casestudy Images/locuz/Header Image.png" alt="Dashboard preview hero image">
+      </figure>
+    </article>
+
+    <!-- Role / Platform / Tools + summary -->
+    <article class="project__card">
+      <section class="project__intro">
+        <aside class="project__info">
+          <div class="project__info-block">
+            <h2 class="project__info-label">Role</h2>
+            <p class="project__info-text">UX + UI, Visual Design, Design Handoff</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Platform</h2>
+            <p class="project__info-text">Web · Desktop</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Tools</h2>
+            <p class="project__info-text">Figma, Client Content Docs</p>
+          </div>
+        </aside>
+
+        <div class="project__summary">
+          <p class="project__body">
+            Locuz is a cybersecurity and cloud transformation solutions provider with a wide service portfolio. Their existing site contained outdated layouts, inconsistent visuals, and lacked clear content hierarchy. I redesigned 12+ enterprise solution pages to create a modern, structured UI system that simplifies complex service descriptions into scannable sections, shapes a consistent visual language, and improves overall readability and engagement for potential enterprise clients.
+          </p>
+
+          <a class="button button--primary" href="#prototype">View Prototype</a>
+        </div>
+      </section>
+    </article> 
+
+    <!-- Overview -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Overview</h2>
+        <p class="project__body">
+         Locuz offering a wide set of enterprise solutions. Their website content was strong, but the service pages 
+         lacked visual hierarchy, consistency, and modern UI standards—making it difficult for users to understand offerings
+        quickly. 
+        </p>
+        <p class="project__body">
+           This redesign focused on organizing complex service information into clear, structured layouts, establishing 
+        a reusable component system, and aligning the visual identity with a more contemporary enterprise look and feel.
+        </p>
+      </section>
+    </article>
+
+    <!-- The Challenge -->
+    <article class="project__card project__card--highlight">
+      <section class="project__section">
+        <h2 class="project__section-title">The Challenge</h2>
+
+        <div class="project__stack">
+          <ul class="project__list project__body--on-light">
+            <li>The website had inconsistent layouts and lacked visual hierarchy.</li>
+            <li>Each service page contained large blocks of text, making it hard to scan or understand quickly.</li>
+            <li>There was no unified structure to showcase offerings, benefits, and differentiators.</li>
+            <li>Graphic elements were outdated and did not reflect Locuz's technical expertise.</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <!-- Design Goals -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Design Goals</h2>
+
+        <div class="project__stack">
+          <ul class="project__list">
+            <li>Improve Clarity: Break down service information into easy-to-read visual sections.</li>
+            <li>Establish Consistency: Create reusable page templates & component styles.</li>
+            <li>Enhance Brand Trust: Use modern visual language inspired by cybersecurity and enterprise UI patterns.</li>
+            <li>Simplify Handoff: Deliver clean Figma structure for seamless developer implementation.</li>
+          </ul>
+        </div>
+
+      </section>
+    </article>
+
+    <!-- Process & What I Did -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Process & What I Did</h2>
+
+          <ol class="project-list">
+  <li class="project-item">
+    <strong>Reviewed existing pages & collected content</strong>
+    <p class="project-text">
+      Studied previously published pages, marketing assets, and sales materials to understand positioning and user intent.
+    </p>
+  </li>
+
+  <li class="project-item">
+    <strong>Defined structure & page flow</strong>
+    <p class="project-text">
+      Created a unified page template used across all service pages:
+    </p>
+    <ul class="project-list">
+      <li class="project-item">Hero Banner</li>
+      <li class="project-item">Problem Context</li>
+      <li class="project-item">Core Value Proposition</li>
+      <li class="project-item">Service Offerings</li>
+      <li class="project-item">Benefits</li>
+      <li class="project-item">Why Choose Locuz</li>
+      <li class="project-item">Partnerships &amp; CTA</li>
+    </ul>
+  </li>
+  
+  <li class="project-item">
+    <strong>Low-fidelity wireframes</strong>
+    <p class="project-text">
+      Mapped text-heavy content into visual sections for faster scanning and clearer hierarchy.
+    </p>
+  </li>
+
+  <li class="project-item">
+    <strong>Visual design & component system</strong>
+    <ul class="project-list">
+      <li class="project-item">New illustration style, icons, and section patterns</li>
+      <li class="project-item">Consistent spacing, color, and typography rules</li>
+    </ul>
+  </li>
+
+  <li class="project-item">
+    <strong>Figma handoff to developers</strong>
+    <p class="project-text">
+      Organized components, page specs, and annotations for a smooth build and future page expansion.
+    </p>
+  </li>
+</ol>
+        </div>
+      </section>
+    </article>
+
+    <!-- Outcome -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Outcome</h2>
+        <p class="project__body">
+          The redesigned Enterprise Solutions pages improved readability, trust, and navigation clarity for business 
+          decision-makers exploring security and digital transformation services. The structured design system is now 
+          reusable, helping Locuz expand additional service pages efficiently.
+        </p>
+      </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="project__footer">
+      <p class="project__footnote">Copyright © 2025 Syed Amjad, All Rights Reserved</p>
+    </footer>
+
+  </main>
+
+<!-- Modal -->
+<div id="prototype-modal" class="modal">
+  <div class="modal-content">
+    <iframe src="https://embed.figma.com/proto/8CJ8qRaFu01cXN3cOse6fI/LOCUZ-ENTERPRISE-WEBSITE-REVAMP?page-id=535%3A154&node-id=1281-1217&viewport=-667%2C71%2C0.19&scaling=scale-down-width&content-scaling=fixed&embed-host=share" 
+    allowfullscreen></iframe>
+  </div>
+
+  <!-- Floating Close Button (keep only this one) -->
+  <button class="modal-close" id="closeModal">&times;</button>
+</div>
+
+<!-- JavaScript for Prototype modal-->
+
+<script>
+  const openBtn = document.querySelector('.button.button--primary[href="#prototype"]');
+  const modal = document.getElementById('prototype-modal');
+  const closeBtn = document.getElementById('closeModal');
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+</script>
+
+<!-- disable the right-click context menu  -->
+  
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script> 
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Disable Ctrl+U (or Cmd+U on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+      e.preventDefault();
+      alert("Viewing page source is disabled.");
+    }
+    
+    // Disable Ctrl+S (or Cmd+S on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      alert("Saving this page is disabled.");
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+      e.preventDefault(); // Prevent the default action
+    }
+  });
+  </script>
+
+</body>
+</html>

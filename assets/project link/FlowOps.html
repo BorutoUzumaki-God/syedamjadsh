@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="FlowOps AI Dashboard — Case Study: role, problem, research, design process, and impact." />
+  <title>FlowOps AI Dashboard — Case Study</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./Style/project.css" />
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+
+<body>
+  <main class="project">
+
+    <!-- Header / Hero -->
+    <article class="project__card project__card--hero">
+      <header class="project__header">
+        <h1 class="project__title">FlowOps AI Dashboard</h1>
+        <p class="project__subtitle">
+          A visual, AI-assisted workflow builder for marketing teams—create, run, and scale campaigns with guided steps.
+        </p>
+      </header>
+
+      <nav class="project__meta" aria-label="Project metadata">
+        <span class="project__badge">UX Architecture</span>
+        <span class="project__badge">Component Library</span>
+        <span class="project__badge">System Design</span>
+        <span class="project__badge">2025</span>
+      </nav>
+
+      <figure class="project__hero">
+        <img src="./Casestudy Images/WorkflowAI/Header Image.png" alt="Dashboard preview hero image">
+      </figure>
+    </article>
+
+    <!-- Role / Platform / Tools + summary -->
+    <article class="project__card">
+      <section class="project__intro">
+        <aside class="project__info">
+          <div class="project__info-block">
+            <h2 class="project__info-label">Role</h2>
+            <p class="project__info-text">UX + UI · Information Architecture </p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Platform</h2>
+            <p class="project__info-text">Web · Desktop</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Tools</h2>
+            <p class="project__info-text">Figma, FigJam,  AI, Paper</p>
+          </div>
+        </aside>
+
+        <div class="project__summary">
+          <p class="project__body">
+            FlowOps is a marketing workflow platform designed from scratch to simplify complex process builders. 
+            It transforms tangled automation steps into clear, visual flows and introduces AI-driven nodes for content 
+            creation, approvals, and repeatable templates. The result is a faster, more intuitive workflow experience for 
+            marketing teams managing large-scale campaigns.
+          </p>
+
+          <a class="button button--primary" href="#prototype">View Prototype</a>
+        </div>
+      </section>
+    </article> 
+
+    <!-- Overview -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Overview</h2>
+        <p class="project__body">
+            FlowOps AI is a workflow automation platform designed to help marketing teams create, run, and scale repetitive 
+            content generation workflows with ease. Traditional workflow builders are often overwhelming, complex, and 
+            require technical setup. 
+        </p>
+        <p class="project__body">
+            It simplifies the experience with a clean interface, guided workflow creation, 
+            and AI-assisted nodes that support tasks like email templating, campaign messaging, and content personalization.
+        </p>
+      </section>
+    </article>
+
+    <!-- Problem Summary -->
+    <article class="project__card project__card--highlight">
+      <section class="project__section">
+        <h2 class="project__section-title">Problem Summary</h2>
+        <p class="project__body project__body--on-light">
+          Marketing teams frequently need to create standardized messages and campaigns across large audiences. 
+          Existing workflow automation tools were:
+        </p>
+
+        <div class="project__stack">
+          <p class="project__subtle">The existing platform provided scanning and detection capabilities, but:</p>
+          <ul class="project__list project__body--on-light">
+            <li>Difficult to learn</li>
+            <li>Heavy in configuration</li>
+            <li>Not designed for marketing-specific tasks</li>
+            <li>Lacking guidance or visual clarity</li>
+          </ul>
+        </div>
+
+        <p class="project__body project__body--on-light">
+        </b> As a result, users spent more time figuring out how to use the tool instead of actually creating workflows.</b>
+        </p>
+
+      </section>
+    </article>
+
+     <!-- Understanding the Requirement -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">The Client Needed:</h2>
+
+          <ul class="project__list">
+            <li>A visual workflow builder that is non-technical</li>
+            <li>Clear step-by-step task logic</li>
+            <li>Reusable workflow templates (“Library” feature)</li>
+            <li>AI-powered content generation inside each step</li>
+            <li>A centralized dashboard to manage all workflows & assistants</li>
+          </ul>
+        </div>
+
+        <p class="project__body">
+          The entire product had to be designed from scratch, including layout, navigation structure, 
+          system models, and visual identity.
+        </p>
+       
+      </section>
+    </article>
+
+    <!-- Research & Insights -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Research & Insights</h2>
+
+        <div class="project__stack">
+          <p class="project__muted">Through review of competitors and team discussions, the core design insights were:</p>
+          <ul class="project__list">
+            <li>Users needed to see the workflow holistically, not as nested menus</li>
+            <li>Each workflow step should feel modular and editable</li>
+            <li>Clutter-free UI is essential for reducing hesitation and confusion</li>
+            <li>Marketing workflows should support context-based AI suggestions</li>
+          </ul>
+        </div>
+
+        <p class="project__body">
+          These insights shaped the product around clarity, visibility, and guided creation.
+        </p>
+
+      </section>
+    </article>
+
+    <!-- Principle 
+    <article class="project__card project__card--highlight">
+      <section class="project__section project__quote">
+        <img class="project__quote-icon" src="./Casestudy Images/Icons/icon-quote.svg" alt="quote icon">
+        <blockquote class="project__blockquote">
+          “Make critical risks obvious first. Show context only when needed.”
+        </blockquote>
+      </section>
+    </article> -->
+
+    <!-- Stakeholder Workshops & Ideation 
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Stakeholder Workshops &amp; Ideation</h2>
+
+        <div class="project__stack">
+          <p class="project__muted">Workshops with:</p>
+          <ul class="project__list">
+            <li>CTO and Engineering Leads</li>
+            <li>Head of Product</li>
+            <li>Security Operations Analysts</li>
+          </ul>
+        </div>
+
+        <div class="project__stack">
+          <p class="project__muted">We aligned on three guiding principles:</p>
+          <ul class="project__list">
+            <li>Clarity over density</li>
+            <li>Risk-first visibility</li>
+            <li>Structured drill-down (Summary → Category → Details → Suggested Fix)</li>
+          </ul>
+        </div>
+      </section>
+    </article> -->
+
+
+
+    <!-- User Flow -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">User Flow</h2>
+        <p class="project__body">
+          The workflow creation process was designed with a simple linear mental model:
+        </p>
+
+        <div class="project__stack">
+          <ul class="project__list">
+            <li>Choose a workflow type (from Library)</li>
+            <li>Add nodes based on tasks</li>
+            <li>Connect steps visually</li>
+            <li>Preview output</li>
+            <li>Run workflow</li>
+          </ul>
+        </div>
+
+       <p class="project__body">
+          This ensured users understood where they are and what happens next.
+        </p>
+
+    </article>
+
+    <!-- Wireframes -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Wireframes</h2>
+
+        <p class="project__body">
+          The first wireframes focused on defining:
+        </p>
+        <ul class="project__list">
+          <li>Navigation layout</li>
+          <li>Workspace canvas structure</li>
+          <li>Node interactions</li>
+          <li>Sidebar component logic</li>
+        </ul>
+
+        <p class="project__body">
+          The early low-fidelity layouts helped validate
+        </p>
+
+        <ul class="project__list">
+          <li>Clear visual hierarchy</li>
+          <li>Node grouping logic</li>
+          <li>Simplicity in node creation flow</li>
+        </ul>
+
+      </section>
+
+      <figure class="project__pair">
+        <img src="./Casestudy Images/WorkflowAI/LF Image 1.png" alt="Wireframe example 1">
+        <img src="./Casestudy Images/WorkflowAI/LF Image 2.png" alt="Wireframe example 2">
+      </figure>
+    </article>
+
+    <!-- High-Fidelity Design -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">High-Fidelity Design</h2>
+
+        <p class="project__body">
+          The final interface focused on a clean layout and a component system that could scale across the platform.
+        </p>
+
+        <p class="project__body">
+          Key Interface Areas:
+        </p>
+
+        <ul class="project__list">
+          <li>Dashboard — Shows an overview of workflows, active states, and assistants.</li>
+          <li>Workflow Library — Ready-made workflows that users can duplicate and customize.</li>
+          <li>Builder Canvas — A drag-and-drop space to visually build multi-step workflows.</li>
+          <li>Node Editor Panel — A side panel used to configure AI prompts, rules, and conditions for each step.</li>
+          <li>Assistants Module — A workspace to create reusable AI-based agents for repeated tasks.</li>
+        </ul>
+
+      </section>
+
+      <figure class="project__pair">
+        <img src="./Casestudy Images/WorkflowAI/HF Image 1.png" alt="Wireframe example 1">
+        <img src="./Casestudy Images/WorkflowAI/HF Image 2.png" alt="Wireframe example 2">
+        <img src="./Casestudy Images/WorkflowAI/HF Image 3.png" alt="High-fidelity design mockup">
+        <img src="./Casestudy Images/WorkflowAI/HF Image 4.png" alt="High-fidelity design mockup">
+      </figure>
+    </article>
+
+    <!-- Outcome & Impact -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Outcome & Impact</h2>
+        <p class="project__body">FlowOps AI turned complex, technical workflow creation into a simple guided flow.
+            Marketing teams were able to:</p>
+        <ul class="project__list">
+          <li>Build workflows without technical help</li>
+          <li>Create campaign content faster</li>
+          <li>Maintain consistent messaging across large audience scales</li>
+          <li>Reduce time spent configuring workflow tools</li>
+        </ul>
+        <p class="project__body">The system now supports scalable workflow automation with room for future expansion.</p>
+      </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="project__footer">
+      <p class="project__footnote">Copyright © 2025 Syed Amjad, All Rights Reserved</p>
+    </footer>
+
+  </main>
+
+<!-- Modal -->
+<div id="prototype-modal" class="modal">
+  <div class="modal-content">
+<iframe src="https://embed.figma.com/proto/uVNdX2hoYeOs7xP9agX0c9/Workflow-AI-Assistant?page-id=22%3A25&node-id=299-4987&viewport=124%2C157%2C0.09&scaling=scale-down-width&content-scaling=fixed&embed-host=share" 
+allowfullscreen></iframe>
+  </div>
+
+  <!-- Floating Close Button (keep only this one) -->
+  <button class="modal-close" id="closeModal">&times;</button>
+</div>
+
+<!-- JavaScript for Prototype modal-->
+
+<script>
+  const openBtn = document.querySelector('.button.button--primary[href="#prototype"]');
+  const modal = document.getElementById('prototype-modal');
+  const closeBtn = document.getElementById('closeModal');
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+</script>
+
+<!-- disable the right-click context menu  -->
+  
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script> 
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Disable Ctrl+U (or Cmd+U on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+      e.preventDefault();
+      alert("Viewing page source is disabled.");
+    }
+    
+    // Disable Ctrl+S (or Cmd+S on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      alert("Saving this page is disabled.");
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+      e.preventDefault(); // Prevent the default action
+    }
+  });
+ </script> 
+
+</body>
+</html>

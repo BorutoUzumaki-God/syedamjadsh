@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="IoTSecure Vulnerability Monitoring — case study: role, problem, research, design process, and impact." />
+  <title>IoTSecure Vulnerability Monitoring — Case Study</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="./Style/project.css" />
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</head>
+
+<body>
+  <main class="project">
+
+    <!-- Header / Hero -->
+    <article class="project__card project__card--hero">
+      <header class="project__header">
+        <h1 class="project__title">IOTSECURE VULNERABILITY MONITORING</h1>
+        <p class="project__subtitle">
+          A clarity-first dashboard for scanning firmware, prioritizing risks, and tracking compliance.
+        </p>
+      </header>
+
+      <nav class="project__meta" aria-label="Project metadata">
+        <span class="project__badge">Interaction Design</span>
+        <span class="project__badge">UX Architecture</span>
+        <span class="project__badge">2024</span>
+      </nav>
+
+      <figure class="project__hero">
+        <img src="./Casestudy Images/IOT/Header Image.png" alt="Dashboard preview hero image">
+      </figure>
+    </article>
+
+    <!-- Role / Platform / Tools + summary -->
+    <article class="project__card">
+      <section class="project__intro">
+        <aside class="project__info">
+          <div class="project__info-block">
+            <h2 class="project__info-label">Role</h2>
+            <p class="project__info-text">UX + UI, Research, Graphic, UAT</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Platform</h2>
+            <p class="project__info-text">Web · Desktop</p>
+          </div>
+
+          <div class="project__info-block">
+            <h2 class="project__info-label">Tools</h2>
+            <p class="project__info-text">Figma, AI, Paper</p>
+          </div>
+        </aside>
+
+        <div class="project__summary">
+          <p class="project__body">
+            IoTSecure is a vulnerability monitoring dashboard that helps security teams detect risks in IoT devices. 
+            The platform simplifies complex firmware scan data into clear visual insights, highlighting compliance status, 
+            severity levels, and remediation actions. The redesigned workflow improves clarity, 
+            reduces analysis time, and supports faster decision-making.
+          </p>
+
+          <a class="button button--primary" href="#prototype">View Prototype</a>
+        </div>
+      </section>
+    </article> 
+
+    <!-- Overview -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Overview</h2>
+        <p class="project__body">
+         IoTSecure is a vulnerability monitoring dashboard that helps security teams detect risks in IoT devices. 
+         The platform simplifies complex firmware scan data into clear visual insights, highlighting compliance status, 
+         severity levels, and remediation actions. The redesigned workflow improves clarity, reduces analysis time, 
+         and supports faster decision-making.
+        </p>
+        <p class="project__body">
+          The goal was to <strong>rethink the information hierarchy and create a clear, insight-first dashboard</strong>
+          that helps security teams make faster, more confident decisions.
+        </p>
+      </section>
+    </article>
+
+    <!-- Problem Summary -->
+    <article class="project__card project__card--highlight">
+      <section class="project__section">
+        <h2 class="project__section-title">Problem Summary</h2>
+        <p class="project__body project__body--on-light">
+          IoT devices such as CCTV cameras, access control systems, and sensors are often shipped with weak firmware
+          security, outdated software versions, and default passwords. This makes them an easy entry point for attackers.
+        </p>
+
+        <div class="project__stack">
+          <p class="project__subtle">The existing platform provided scanning and detection capabilities, but:</p>
+          <ul class="project__list project__body--on-light">
+            <li>The UI was dense and cluttered</li>
+            <li>Critical alerts were buried in tables and logs</li>
+            <li>Compliance scores lacked clarity</li>
+            <li>Navigation felt fragmented and inconsistent</li>
+            <li>Teams struggled to identify what required immediate action</li>
+          </ul>
+        </div>
+
+        <p class="project__body project__body--on-light">
+          The result: time lost in triaging risks, which increases the window for breaches.
+        </p>
+
+     <!--   <div class="project__gallery">
+          <img src="./Casestudy Images/IOT/Problem Image 1.png" alt="Previous interface screenshot 1">
+          <img src="./Casestudy Images/IOT/Problem Image 2.png" alt="Previous interface screenshot 2">
+          <img src="./Casestudy Images/IOT/Problem Image 3.png" alt="Previous interface screenshot 3">
+          <img src="./Casestudy Images/IOT/Problem Image 4.png" alt="Previous interface screenshot 4">
+        </div> -->
+      </section>
+    </article>
+
+    <!-- Research & Insights -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Research &amp; Insights</h2>
+
+        <div class="project__stack">
+          <p class="project__muted">To understand user friction, I conducted:</p>
+          <ul class="project__list">
+            <li>Review of existing UI usage patterns</li>
+            <li>User interviews with security analysts and network admins</li>
+            <li>Competitive analysis (Hart, Claroty, Tenable One)</li>
+          </ul>
+        </div>
+
+        <div class="project__stack">
+          <h3 class="project__subtitle">Key Insights</h3>
+          <ul class="project__list">
+            <li>Security teams scan multiple devices daily</li>
+            <li>Alerts lacked visual prioritization</li>
+            <li>Too many screens for core actions</li>
+            <li>Technical data presented without simplification</li>
+          </ul>
+        </div>
+
+        <div class="project__stack">
+          <h3 class="project__subtitle">Problems This Caused</h3>
+          <ul class="project__list">
+            <li>Slower interpretation of results</li>
+            <li>Longer time to decide what to fix first</li>
+            <li>Scattered workflows and higher cognitive load</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <!-- Principle -->
+    <article class="project__card project__card--highlight">
+      <section class="project__section project__quote">
+        <img class="project__quote-icon" src="./Casestudy Images/Icons/icon-quote.svg" alt="quote icon">
+        <blockquote class="project__blockquote">
+          “Make critical risks obvious first. Show context only when needed.”
+        </blockquote>
+      </section>
+    </article>
+
+    <!-- Stakeholder Workshops & Ideation -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Stakeholder Workshops &amp; Ideation</h2>
+
+        <div class="project__stack">
+          <p class="project__muted">Workshops with:</p>
+          <ul class="project__list">
+            <li>CTO and Engineering Leads</li>
+            <li>Head of Product</li>
+            <li>Security Operations Analysts</li>
+          </ul>
+        </div>
+
+        <div class="project__stack">
+          <p class="project__muted">We aligned on three guiding principles:</p>
+          <ul class="project__list">
+            <li>Clarity over density</li>
+            <li>Risk-first visibility</li>
+            <li>Structured drill-down (Summary → Category → Details → Suggested Fix)</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <!-- User Flow -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">User Flow</h2>
+        <p class="project__body">
+          The system was redesigned into a logical, layered flow that mirrors how analysts actually think during investigation.
+        </p>
+      </section>
+
+      <figure class="project__pair">
+        <img src="./Casestudy Images/IOT/User flow Image 1.png" alt="User flow diagram part 1">
+        <img src="./Casestudy Images/IOT/User flow Image 2.png" alt="User flow diagram part 1">
+  </figure>
+    </article>
+
+    <!-- Wireframes to High-fidelity -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Wireframes to High-fidelity</h2>
+        <p class="project__body">
+          Low-fidelity layouts emphasized structure—clean hierarchy, clear spacing, and digestible modules.
+          After validating interaction logic, I moved into high-fidelity visual design:
+        </p>
+        <ul class="project__list">
+          <li>Neutral dark UI tone to match cybersecurity theme</li>
+          <li>Strong highlight colors for risk severity</li>
+          <li>Cards and contextual graphs for data</li>
+          <li>Simplified navigation with fewer mental jumps</li>
+        </ul>
+      </section>
+
+      <figure class="project__pair">
+        <img src="./Casestudy Images/IOT/HF Image 1.png" alt="Wireframe example 1">
+        <img src="./Casestudy Images/IOT/HF Image 6.png" alt="Wireframe example 2">
+        <img src="./Casestudy Images/IOT/HF Image 3.png" alt="High-fidelity design mockup">
+        <img src="./Casestudy Images/IOT/HF Image 4.png" alt="High-fidelity design mockup">
+      </figure>
+    </article>
+
+    <!-- Testing -->
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Prototyping, Testing &amp; Iteration</h2>
+        <p class="project__body">The interactive prototype was tested with:</p>
+        <ul class="project__list">
+          <li>3 SOC Engineers</li>
+          <li>2 Network Security Admins</li>
+        </ul>
+      </section>
+    </article>
+
+    <article class="project__card">
+      <section class="project__section">
+        <h2 class="project__section-title">Impact</h2>
+        <ul class="project__list">
+          <li>Faster vulnerability triaging</li>
+          <li>Lower learning curve for new analysts</li>
+          <li>Clear awareness of what needs immediate attention</li>
+          <li>Modernized, trustworthy enterprise look</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Footer -->
+    <footer class="project__footer">
+      <p class="project__footnote">Copyright © 2025 Syed Amjad, All Rights Reserved</p>
+    </footer>
+
+  </main>
+
+<!-- Modal -->
+<div id="prototype-modal" class="modal">
+  <div class="modal-content">
+<iframe 
+  src="https://embed.figma.com/proto/tVipjqmtec4bPLd2yK59Ol/IOT-Security?page-id=835%3A39881&node-id=887-53938&viewport=1593%2C296%2C0.13&scaling=scale-down-width&content-scaling=fixed&embed-host=share" 
+  allowfullscreen>
+</iframe>
+  </div>
+
+  <!-- Floating Close Button (keep only this one) -->
+  <button class="modal-close" id="closeModal">&times;</button>
+</div>
+
+<!-- JavaScript for Prototype modal-->
+
+<script>
+  const openBtn = document.querySelector('.button.button--primary[href="#prototype"]');
+  const modal = document.getElementById('prototype-modal');
+  const closeBtn = document.getElementById('closeModal');
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = "flex";
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+</script>
+
+<!-- disable the right-click context menu  -->
+  
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script> 
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Disable Ctrl+U (or Cmd+U on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'u') {
+      e.preventDefault();
+      alert("Viewing page source is disabled.");
+    }
+    
+    // Disable Ctrl+S (or Cmd+S on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+      e.preventDefault();
+      alert("Saving this page is disabled.");
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    // Check if Ctrl (or Cmd on Mac) is pressed along with the key 'I'
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+      e.preventDefault(); // Prevent the default action
+    }
+  });
+</script>
+
+</body>
+</html>
